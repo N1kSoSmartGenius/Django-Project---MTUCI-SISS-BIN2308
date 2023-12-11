@@ -20,14 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-qgrttku(9sb4fsc7@rj%7ml#mjbff6%57vtny!bucq$)x+x&$q'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '9sb4fsc7@rj%7ml#mjbff6%57vtny!bucq$)x+x&$q')
+SECRET_KEY = 'django-insecure-qgrttku(9sb4fsc7@rj%7ml#mjbff6%57vtny!bucq$)x+x&$q'
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '9sb4fsc7@rj%7ml#mjbff6%57vtny!bucq$)x+x&$q')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['N1kGenius.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/N1kGenius/static'
+MEDIA_ROOT = '/home/N1kGenius/media'
+
 
 STATICFILES_DIRS = [
     Path.joinpath(BASE_DIR, 'static')
@@ -133,4 +137,3 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media/')
-MEDIA_URL = 'media/'
